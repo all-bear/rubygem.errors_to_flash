@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     errors_to_flash (0.0.1)
-      rails (~> 4.2.3)
+      rails (>= 4.0.0)
 
 GEM
   remote: https://rubygems.org/
