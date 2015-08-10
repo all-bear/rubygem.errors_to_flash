@@ -1,7 +1,7 @@
 require "rails_helper"
 
 class UserControllerOnlySubclass < UserController
-  errors_to_flash :fields => [:user], :only => [:create]
+  errors_to_flash :fields => [:user], :only => [:create, :new]
 end
 
 #TODO this is ugly way to use controllers
@@ -18,14 +18,25 @@ RSpec.describe UserControllerOnlySubclass, type: :controller do
       @user.save
       render :text => ""
     end
+
+    def new
+      @user = User.new(user_params)
+      @user.save
+      render :text => ""
+    end
   end
 
   before(:each) do
     flash[:error] = nil
   end
 
-  it "must fill flash for action used in only option" do
+  it "must fill flash for every action used in only option" do
     get :create
+    expect(flash[:error]).to eq("First name can't be blank. Last name can't be blank")
+  end
+
+  it "must fill flash for every action used in only option" do
+    get :new
     expect(flash[:error]).to eq("First name can't be blank. Last name can't be blank")
   end
 
