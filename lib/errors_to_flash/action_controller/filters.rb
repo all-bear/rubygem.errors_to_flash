@@ -12,7 +12,7 @@ module ErrorsToFlash
             flash[:error] = "" if flash[:error].nil?
 
             flash[:error] = args[:fields].inject(flash[:error]) do |sum, field|
-              model = instance_variable_get(("@" + field.to_s).intern)
+              model = instance_variable_get(("@#{field.to_s}").intern)
 
               if model
                 sum + model.errors.full_messages.join(". ")
