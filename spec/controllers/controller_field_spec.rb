@@ -32,12 +32,12 @@ RSpec.describe UserControllerFieldSubclass, type: :controller do
 
   it "must fill flash on all actions" do
     get :create
-    expect(flash[:error]).to eq("First name can\"t be blank. Last name can\"t be blank")
+    expect(flash[:error]).to eq("First name can't be blank. Last name can't be blank")
   end
 
   it "must fill flash on all actions" do
     get :index
-    expect(flash[:error]).to eq("First name can\"t be blank. Last name can\"t be blank")
+    expect(flash[:error]).to eq("First name can't be blank. Last name can't be blank")
   end
 
   it "must fill flash only for used field" do

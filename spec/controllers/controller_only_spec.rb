@@ -26,7 +26,7 @@ RSpec.describe UserControllerOnlySubclass, type: :controller do
 
   it "must fill flash for action used in only option" do
     get :create
-    expect(flash[:error]).to eq("First name can\"t be blank. Last name can\"t be blank")
+    expect(flash[:error]).to eq("First name can't be blank. Last name can't be blank")
   end
 
   it "must not fill flash for action not used in only option" do

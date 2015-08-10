@@ -31,6 +31,6 @@ RSpec.describe UserControllerCreateSubclass, type: :controller do
 
   it "must fill flash for action not used in except option" do
     get :index
-    expect(flash[:error]).to eq("First name can\"t be blank. Last name can\"t be blank")
+    expect(flash[:error]).to eq("First name can't be blank. Last name can't be blank")
   end
 end
