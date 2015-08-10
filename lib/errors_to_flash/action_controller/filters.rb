@@ -9,9 +9,9 @@ module ErrorsToFlash
           raise ArgumentError.new "Fields are empty" if args[:fields].length == 0
 
           after_action args do
-            flash[:error] = "" if flash[:error].nil?
+            flash.now[:error] = "" if flash[:error].nil?
 
-            flash[:error] = args[:fields].inject(flash[:error]) do |sum, field|
+            flash.now[:error] = args[:fields].inject(flash[:error]) do |sum, field|
               model = instance_variable_get(("@#{field.to_s}").intern)
 
               if model
