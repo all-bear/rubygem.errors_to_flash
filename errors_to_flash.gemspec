@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ErrorsToFlash::VERSION
   s.authors     = ["Oleh Birjukov"]
   s.email       = ["ol.birjukov@gmail.com"]
-  s.homepage    = "https://gitlab.com/ror_g/errors-to-flash"
+  s.homepage    = "https://github.com/all-bear/rubygem.errors_to_flash"
   s.summary     = "Add all errors of model to flash[:error]."
   s.description = "Add all errors of model to flash[:error]. Model must implement method 'errors'"
   s.license     = "MIT"
